@@ -1,0 +1,12 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "name": "kritika",
+      "country": "india",
+      "proficiency": 78,
+      "mobile": 123456789,
+      "email": "kritikasingh@gmail.com"
+    }
+  ]
+}
