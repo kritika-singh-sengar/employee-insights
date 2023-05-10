@@ -12,4 +12,5 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  headerTitle : string = 'EMPLOYEE INSIGHTS';
 }
