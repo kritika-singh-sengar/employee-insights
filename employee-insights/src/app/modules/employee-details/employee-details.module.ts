@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AgGridModule } from 'ag-grid-angular';
 
 import { EmployeeDetailsRoutingModule } from './employee-details-routing.module';
 import { EmployeeGridComponent } from './employee-grid/employee-grid.component';
@@ -11,7 +12,8 @@ import { EmployeeGridComponent } from './employee-grid/employee-grid.component';
   ],
   imports: [
     CommonModule,
-    EmployeeDetailsRoutingModule
+    EmployeeDetailsRoutingModule,
+    AgGridModule
   ]
 })
 export class EmployeeDetailsModule { }
