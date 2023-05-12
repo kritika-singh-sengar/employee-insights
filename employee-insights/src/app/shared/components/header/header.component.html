@@ -1,3 +1,10 @@
-<header class="header header-title">
-    {{headerTitle}}
+<header class="navbar fixed-top navbar-light bg-light mb-2">
+  <div class="container-fluid">
+    <div class="navbar-brand">{{ headerTitle }}</div>
+    <div class="add">
+      <button type="button" (click)="redirectToAdd()" class="btn btn-secondary">
+        add
+      </button>
+    </div>
+  </div>
 </header>
