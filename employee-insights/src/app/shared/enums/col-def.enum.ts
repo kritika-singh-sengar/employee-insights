@@ -1,4 +1,4 @@
-export enum COLUMN_FIELD {
+export enum COLUMN_HEADER {
     NAME = 'Name',
     COUNTRY = 'Country',
     SKILLS = 'Skills',
