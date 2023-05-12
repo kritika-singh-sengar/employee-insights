@@ -13,7 +13,8 @@ const routes: Routes = [
     loadChildren: () => import('./modules/employee-details/employee-details.module').then(
       (m) => m.EmployeeDetailsModule
     ),
-  }
+  },
+  { path: '', pathMatch: 'full', redirectTo: 'employee-details' }
 ];
 
 @NgModule({
