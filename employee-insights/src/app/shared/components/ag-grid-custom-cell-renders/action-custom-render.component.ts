@@ -7,7 +7,7 @@ import { ICellRendererParams } from 'ag-grid-community';
     template: ``,
     styles: [``],
 })
-export class FooterComponent implements ICellRendererAngularComp {
+export class ActionCustomCellRenderer implements ICellRendererAngularComp {
 
     constructor() { }
     agInit(params: ICellRendererParams<any, any, any>): void {
