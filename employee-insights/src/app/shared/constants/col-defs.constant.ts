@@ -1,5 +1,5 @@
 import { ColDef } from "ag-grid-community";
-import { ActionCustomCellRender } from "../components/ag-grid-custom-cell-renders/action-custom-render.component";
+import { ActionCustomCellRenderer } from "../components/ag-grid-custom-cell-renders/action-custom-render.component";
 import { COLUMN_HEADER } from "../enums/col-def.enum";
 
 export const EMPLOYEE_INSIGHTS_COL_DEFS: ColDef[] = [
@@ -43,7 +43,7 @@ export const EMPLOYEE_INSIGHTS_COL_DEFS: ColDef[] = [
         headerName: COLUMN_HEADER.ACTION,
         headerTooltip: COLUMN_HEADER.ACTION,
         maxWidth: 80,
-        cellRenderer: ActionCustomCellRender
+        cellRenderer: ActionCustomCellRenderer
     }
 ];
 
