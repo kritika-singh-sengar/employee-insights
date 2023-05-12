@@ -4,5 +4,6 @@ export enum COLUMN_HEADER {
     SKILLS = 'Skills',
     PROFICIENCY = 'Proficiency',
     MOBILE = 'Mobile',
-    EMAIL = 'Email'
+    EMAIL = 'Email',
+    ACTION = 'Action'
 }
