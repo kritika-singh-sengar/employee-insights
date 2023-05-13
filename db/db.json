@@ -4,9 +4,19 @@
       "id": 1,
       "name": "kritika",
       "country": "india",
+      "skills": "html css",
       "proficiency": 78,
       "mobile": 123456789,
       "email": "kritikasingh@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "ritika",
+      "country": "india",
+      "skills": "html",
+      "proficiency": 78,
+      "mobile": 123456789,
+      "email": "ritikasingh@gmail.com"
     }
   ]
 }
