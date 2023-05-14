@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { EMPLOYEE } from 'src/app/shared/models/employee.model';
 import { EmployeeCurdService } from '../employee-curd.service';
 
 @Component({
@@ -13,17 +14,14 @@ export class AddEmployeeComponent implements OnInit {
 
   newEmployee!: FormGroup;
   public selectedSkillsValue: string[] = [];
-  public employee: {
-    name: string, country: string, skills: string[],
-    proficiency: number, mobile: number, email: string
-  } = {
-      name: '',
-      country: '',
-      skills: [],
-      proficiency: 0,
-      mobile: 0,
-      email: ''
-    };
+  public employee: EMPLOYEE = {
+    name: '',
+    country: '',
+    skills: [],
+    proficiency: 0,
+    mobile: 0,
+    email: ''
+  };
   public skillsList = [
     { id: 1, name: 'HTML', selected: false },
     { id: 2, name: 'CSS', selected: false },
@@ -37,7 +35,7 @@ export class AddEmployeeComponent implements OnInit {
 
   }
 
-  addSkillsControls() {
+  public addSkillsControls(): FormArray {
     const arr = this.skillsList.map(skill => {
       return this.fb.control(skill.selected);
     });
