@@ -42,8 +42,8 @@ export class EmployeeCurdService {
     );
   }
 
-  getEmployeeById(employeeId: number): Observable<EMPLOYEE[]> {
-    return this.http.get<EMPLOYEE[]>(API_URL.employee + "/" + employeeId).pipe(
+  getEmployeeById(employeeId: number): Observable<EMPLOYEE> {
+    return this.http.get<EMPLOYEE>(API_URL.employee + "/" + employeeId).pipe(
       retry(2),
       catchError(this.handleError)
     );
