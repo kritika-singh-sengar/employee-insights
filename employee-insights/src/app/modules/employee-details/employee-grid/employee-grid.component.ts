@@ -45,9 +45,11 @@ export class EmployeeGridComponent implements OnInit {
   }
 
   deleteSelectedEmployeeDetails(): void {
-    this.curdService.deleteEmployee(this.empoloyeeId).subscribe((response) => {
-      this.toastr.success("Employee details deleted successfully!!")
-      console.log(response);
+    this.curdService.deleteEmployee(this.empoloyeeId).subscribe(() => {
+      this.toastr.success("Employee details deleted successfully!!");
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     });
   }
 
