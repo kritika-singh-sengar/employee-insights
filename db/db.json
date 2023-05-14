@@ -1,16 +1,16 @@
 {
   "employee": [
     {
+      "id": 1,
       "name": "Nidhi Singh",
       "country": "India",
       "skills": [
         "HTML",
         "CSS"
       ],
-      "proficiency": 25,
+      "proficiency": 50,
       "mobile": "9935225897",
-      "email": "nidhisingh@gmail.com",
-      "id": 1
+      "email": "nidhisingh@gmail.com"
     }
   ]
 }
