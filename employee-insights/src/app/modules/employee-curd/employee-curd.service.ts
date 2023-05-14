@@ -42,6 +42,13 @@ export class EmployeeCurdService {
     );
   }
 
+  getEmployeeById(employeeId: number): Observable<EMPLOYEE[]> {
+    return this.http.get<EMPLOYEE[]>(API_URL.employee + "/" + employeeId).pipe(
+      retry(2),
+      catchError(this.handleError)
+    );
+  }
+
   addEmployee(employee: EMPLOYEE): Observable<EMPLOYEE> {
     return this.http.post<EMPLOYEE>(API_URL.employee, employee).pipe(
       retry(2),
@@ -56,7 +63,7 @@ export class EmployeeCurdService {
     );
   }
 
-  deleteEmployee(id: number, employee: EMPLOYEE): Observable<EMPLOYEE> {
+  deleteEmployee(id: number): Observable<EMPLOYEE> {
     return this.http.delete<EMPLOYEE>(API_URL.employee + "/" + id, this.httpOptions).pipe(
       retry(1),
       catchError(this.handleError)
