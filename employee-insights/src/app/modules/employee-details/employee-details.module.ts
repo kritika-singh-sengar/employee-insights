@@ -4,7 +4,8 @@ import { AgGridModule } from 'ag-grid-angular';
 
 import { EmployeeDetailsRoutingModule } from './employee-details-routing.module';
 import { EmployeeGridComponent } from './employee-grid/employee-grid.component';
-
+import { MatTabsModule } from "@angular/material/tabs";
+import { GridApi } from 'ag-grid-community';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,9 @@ import { EmployeeGridComponent } from './employee-grid/employee-grid.component';
   imports: [
     CommonModule,
     EmployeeDetailsRoutingModule,
+    MatTabsModule,
     AgGridModule
-  ]
+  ],
+  providers: [GridApi]
 })
 export class EmployeeDetailsModule { }
