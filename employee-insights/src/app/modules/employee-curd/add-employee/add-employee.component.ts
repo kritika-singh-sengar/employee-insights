@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { EmployeeCurdService } from '../employee-curd.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -8,24 +11,39 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: EmployeeCurdService,
+    private toastr: ToastrService,
+    private router: Router) { }
 
-  addEmployee = new FormGroup({
-    name: new FormControl(null, [Validators.pattern('[a-zA-Z ]*')]),
-    country: new FormControl(""),
-    skills: new FormControl(),
-    proficiency: new FormControl(),
-    mobile: new FormControl(),
-    email: new FormControl()
+  newEmployee = new FormGroup({
+    name: new FormControl(null, [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
+    country: new FormControl(null, [Validators.required, Validators.pattern('[a-zA-Z]*')]),
+    skills: new FormControl(null, [Validators.required, Validators.pattern('[a-zA-Z]*')]),
+    proficiency: new FormControl(0, [Validators.required, Validators.pattern('[a-zA-Z]*')]),
+    mobile: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
+    email: new FormControl(null, [Validators.required, Validators.email])
   });
 
-  get name() { return this.addEmployee.get('name'); }
-  get country() { return this.addEmployee.get('country'); }
-  get skills() { return this.addEmployee.get('proficiency'); }
-  get mobile() { return this.addEmployee.get('mobile'); }
-  get email() { return this.addEmployee.get('email'); }
+  get name() { return this.newEmployee.get('name'); }
+  get country() { return this.newEmployee.get('country'); }
+  get skills() { return this.newEmployee.get('proficiency'); }
+  get mobile() { return this.newEmployee.get('mobile'); }
+  get email() { return this.newEmployee.get('email'); }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    this.service.addEmployee(this.newEmployee.value).subscribe((response) => {
+      this.newEmployee.reset();
+      this.toastr.success("Employee Details Added Successfully!!", "Successful");
+      this.toastr.info("Page Will Redirect Automatically!!", 'Info');
+      setTimeout(() => {
+        this.router.navigate(['/']);
+      }, 5000);
+    }, () => {
+      this.toastr.error("Something went worng.", "Error")
+    });
   }
 
 }

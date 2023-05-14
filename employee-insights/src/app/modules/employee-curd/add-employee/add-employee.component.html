@@ -1,1 +1,82 @@
-<p>add-employee works!</p>
+<div class="container add-form">
+    <form class="bg-light p-5 pb-3" [formGroup]="newEmployee" (ngSubmit)="onSubmit()">
+        <div class="row justify-content-md-center">
+            <div class="row mb-3">
+                <div class="col-sm-4">
+                    <label for="name" class="form-label">Name</label>
+                </div>
+                <div class="col-sm-8 px-5">
+                    <input type="text" formControlName="name" id="name" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-4">
+                    <label for="country" class="form-label">Country</label>
+                </div>
+                <div class="col-sm-8 px-5">
+                    <input type="text" formControlName="country" id="country" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-4">
+                    <label for="skills" class="form-label">Skills</label>
+                </div>
+                <div class="col-sm-8 px-5">
+                    <div class="form-check">
+                        <input type="checkbox" formControlName="skills" id="html" value="html" class="form-check-input">
+                        <label for="html" class="form-check-label">HTML</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" formControlName="skills" id="css" value="css" class="form-check-input">
+                        <label for="css" class="form-check-label">CSS</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" formControlName="skills" id="js" value="js" class="form-check-input">
+                        <label for="js" class="form-check-label">JS</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-4">
+                    <label for="proficiency" class="form-label">Proficiency</label>
+                </div>
+                <div class="col-sm-8 px-5">
+                    <input type="range" formControlName="proficiency" id="proficiency" list="markers"
+                        class="form-range">
+                    <datalist id="markers">
+                        <option value="0" label="0"></option>
+                        <option value="25" label="25"></option>
+                        <option value="50" label="50"></option>
+                        <option value="75" label="75"></option>
+                        <option value="100" label="100"></option>
+                    </datalist>
+                </div>
+
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-4">
+                    <label for="email" class="form-lable">Email</label>
+                </div>
+                <div class="col-sm-8 px-5">
+                    <input type="email" formControlName="email" id="email" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-4">
+                    <label for="mobile" class="form-lable">Mobile</label>
+                </div>
+                <div class="col-sm-8 px-5">
+                    <input type="email" formControlName="mobile" id="mobile" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex flex-wrap justify-content-center">
+                <button type="reset" class="btn btn-primary">Reset</button>
+            </div>
+            <div class="col d-flex flex-wrap">
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
