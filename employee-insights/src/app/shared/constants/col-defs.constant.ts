@@ -31,7 +31,8 @@ export const EMPLOYEE_INSIGHTS_COL_DEFS: ColDef[] = [
         headerName: COLUMN_HEADER.MOBILE,
         headerTooltip: COLUMN_HEADER.MOBILE,
         field: 'mobile',
-        tooltipField: 'mobile'
+        tooltipField: 'mobile',
+        maxWidth: 120
     },
     {
         headerName: COLUMN_HEADER.EMAIL,
@@ -42,11 +43,15 @@ export const EMPLOYEE_INSIGHTS_COL_DEFS: ColDef[] = [
     {
         headerName: COLUMN_HEADER.ACTION,
         headerTooltip: COLUMN_HEADER.ACTION,
-        maxWidth: 80,
-        cellRenderer: ActionCustomCellRenderer
+        cellRenderer: ActionCustomCellRenderer,
+        maxWidth: 100
     }
 ];
 
-export const defaultColumnDefs: ColDef[] = [
-
-];
+export const DEFAULT_COL_DEFS = {
+    editable: false,
+    //floatingFilter: true,
+    filter: 'agTextColumnFilter',
+    sortable: true,
+    resizable: true
+};
