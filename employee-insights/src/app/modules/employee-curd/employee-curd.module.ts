@@ -6,6 +6,7 @@ import { EmployeeCurdRoutingModule } from './employee-curd-routing.module';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     EmployeeCurdRoutingModule,
     ReactiveFormsModule,
     HttpClientModule
-  ]
+  ],
+  providers: [ToastrService]
 })
 export class EmployeeCurdModule { }
